@@ -175,10 +175,12 @@ function changeDiceFace(){
 function resetGame(){
   //reset all values to starting values
   $reset.click(function(event) {
-    clearCells();
     //set reset to true
     resetVal = true;
     win = false;
+    player1Current =0
+    player2Current =0
+    clearCells();
     draw();
     console.log('Game has been reset');
   });
