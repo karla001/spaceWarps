@@ -10,7 +10,7 @@ var cells = $('.cell');//originally is renderjsboard func
 // Constants
 
 var player1 = 1;
-var player2 = -1;
+var player2 = 2;
 
 // Models
 var resetVal = true; //this has to be true for topDisplay to be set
@@ -48,35 +48,34 @@ function updateTurn(){
   //This func should update the current player's turn
   //function should be called at the end of each turn
   //each turn ends when dice is rolled and player position is updated
-  if(win==true){
-    if (playerTurn === player1) {
-      playerTurn = player1
-    }
-    else{
+    if(win==true){
+      if (playerTurn === player1) {
+        playerTurn = player1
+      }
+      else{
+        playerTurn = player2
+      }
+    }else if (playerTurn === player1) {
       playerTurn = player2
     }
-  }else if (playerTurn === player1) {
-    playerTurn = player2
-  }
-  else{
+   else{
     playerTurn = player1
-  }
-  //when player turn changes call draw to render changes
-  draw();
+    }
+    //when player turn changes call draw to render changes
+    draw();
 };   /*------------------Func is Working!!----------------------*/
 
 //This func is called in rollDice func
 //after diceval has been generated
 function playerPosition(){
   setTimeout(function(){
-    //this is showing the person who's turn it just became
-    if (playerTurn === player2) {
+    if (playerTurn === player1) {
       //retreive index value and add
       player1Current = player1Current + diceval
       // player1Current.text(player1)
       //new diceval to index # creating a new
       //board[i] position
-    }else if (playerTurn === player1) {
+    }else if (playerTurn === player2) {
       //retreive index value and ad
       player2Current = player2Current + diceval
       // player2Current.text(player2)
@@ -113,8 +112,10 @@ function rollDice(){
     //the player's var should be changed according to the value rolled
     playerPosition();
     changeDiceFace();
+    setTimeout(function () {
     //update turn for next player at the end of
-    updateTurn();
+      updateTurn();
+    }, 1000);
     draw();
     console.log('dice was rolled to value ' + diceval);
   });
@@ -143,7 +144,7 @@ function draw(){
   }else if (resetVal === true){
     //When reset
     //turnDisplay text will return to "An adventure through time!"
-    $turnDisplay.text("An adventure through time!");
+    $turnDisplay.text("An adventure through space!");
     //bottomDisplay will return to "Start the game!"
     $bottomDisplay.text("Start the game!");
     //put player in starting position
