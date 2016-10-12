@@ -19,3 +19,8 @@ If player(ship) lands on the warp space the player will be sent backward or forw
 
 _*HAVE FUN!*_
 
+**Player 1:**
+![alt text](spaceWarps/assets/p1.PNG "player 1")
+
+**Player 2:**
+![alt text](spaceWarps/assets/p2.PNG "player 2")
