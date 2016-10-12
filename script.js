@@ -213,7 +213,7 @@ function winCheck(){
   if (player1Current > 28 || player2Current > 28){
     win = true;
     draw();
-    alert("You've won!");
+    sweetAlert({title: "You've won the race!",text: " Welcome to planet Senka!"});
     $dice.off('click');
   }
 };/*--------func is working-----------*/
@@ -240,36 +240,36 @@ function Warp(current){
       //Warps-sending players backwards
       case 6:
           moveme = 1
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
           break;
       case 11:
           moveme = 4
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
           break;
       case 16:
           moveme = 7
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
           break;
       case 21:
           moveme = 13
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
           break;
       case 27:
           moveme = 20
-        alert('Warp has been activated');
+        sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
         break;
       //warps-sending players forward
       case 5:
           moveme = 10
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
           break;
       case 12:
           moveme = 18
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence',text: 'Space warp has been activated'});
           break;
       case 19:
           moveme = 22
-          alert('Warp has been activated');
+          sweetAlert({title: 'Turbulence',text: 'Space warp has been activated'});
           break;
       default:
           moveme = current
