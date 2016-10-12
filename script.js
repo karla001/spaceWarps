@@ -205,6 +205,7 @@ function resetGame(){
   //reset all values to starting values
   $reset.click(function(event) {
     //set reset to true
+    $dice.off('click'); //testing
     resetVal = true;
     win = false;
     player1Current =0
