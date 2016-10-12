@@ -50,12 +50,15 @@ a:hover{
   align-items: center;
 }
 .button{
-  height: 70%;
+  height: 60%;
   width: 25%;
   border-radius: 50%;
   border: solid rgba(215, 40, 40, 0.9) 10px;
   font-size: 2em;
   color: white;
+}
+.button:hover{
+  border: solid white 10px;
 }
 .dice{
   height: 94px;

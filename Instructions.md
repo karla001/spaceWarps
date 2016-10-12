@@ -1,6 +1,6 @@
 #Space Warps 
 ### This game is a spaced themed version of chutes and ladders.
-
+#####This is a two  player game.
 How to play:
 
 1. Begin the game by pressing the start button (only to be pressed once at the begining of game). 
