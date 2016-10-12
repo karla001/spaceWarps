@@ -134,6 +134,8 @@ function startGame(){
   console.log('Ready to start game');
   $start.click(function(event) {
     console.log('game started');
+    //testing
+    sweetAlert("Save humanity", "Get to planet Senka!");
     //reset is set to false
     resetVal = false;
     // add event listener to Dice
