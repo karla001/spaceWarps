@@ -228,8 +228,8 @@ function winCheck(){
   }
 };/*--------func is working-----------*/
 function renderjsBoard(){
-  player1icon = "<img class='icon' src='assets/images/p1.png' />";
-  player2icon = "<img class='icon' src='assets/images/p2.png' />";
+  player1icon = "<img class='icon' src='../assets/images/p1.png' />";
+  player2icon = "<img class='icon' src='../assets/images/p2.png' />";
   //this loop should stop when cells no longer available
   //instead it is breaking"canot set texcontent of undefined"
   for(i = 0; i < cells.length; i++){
