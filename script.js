@@ -221,7 +221,7 @@ function winCheck(){
   if (player1Current > 28 || player2Current > 28){
     win = true;
     draw();
-    sweetAlert({title: "You've won the race!",text: " Welcome to planet Senka!"});
+    sweetAlert({title: "You've saved humanity!",text: " Welcome to planet Senka!"});
     $dice.off('click');
   }
 };/*--------func is working-----------*/
