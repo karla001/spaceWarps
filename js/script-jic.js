@@ -18,8 +18,8 @@ var cells = $('.cell');//originally is renderjsboard func
 
 var player1= 1;
 var player2= 2;
-var player1icon="<img class='icon' src='assets/p1.png' />";
-var player2icon="<img class='icon' src='assets/p2.png' />";
+var player1icon= "<img class='icon' src='assets/p1.png' />";
+var player2icon= "<img class='icon' src='assets/p2.png' />";
 
 // Models
 var resetVal = true; //this has to be true for topDisplay to be set

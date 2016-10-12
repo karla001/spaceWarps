@@ -63,35 +63,37 @@ a:hover{
 .dice{
   height: 94px;
   width: 94px;
-  background-image: url('assets/d1.png');
+  background-image: url('../assets/images/d1.png');
 }
 #finish{
-  background-image: url('assets/pl2.png');
+  background-image: url('../assets/images/pl2.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 #start{
-  background-image: url('assets/pl1.png');
+  background-image: url('../assets/images/pl1.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 .cell{
-  background-image: url(assets/stars.gif);
+  background-image: url(../assets/images/stars.gif);
 }
 .board{
-  background-image: url(assets/stars.gif);
+  background-image: url(../assets/images/stars.gif);
   background-repeat:repeat;
   background-size: 78%;
 }
 .cell.warp1{
-  background-image: url('assets/warp1.png');
-  background-size: 120%;
+  background-image: url('../assets/images/warp1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .cell.warp2{
-  background-image: url('assets/warp1.png');
-  background-size: 120%;
+  background-image: url('../assets/images/warp1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .icon{
   height: 50%;
