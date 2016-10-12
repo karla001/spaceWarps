@@ -9,8 +9,8 @@ var cells = $('.cell');//originally is renderjsboard func
 
 // Constants
 
-var player1 = 1;
-var player2 = 2;
+var player1= 1;
+var player2= 2;
 var player1icon="<img class='icon' src='assets/p1.png' />";
 var player2icon="<img class='icon' src='assets/p2.png' />";
 
@@ -47,6 +47,8 @@ function initializeModels () {
 //this func is called when the dice is rolled
 //and player position is updated/ turn is complete
 function updateTurn(){
+  player1=1;
+  player2=2;
   //This func should update the current player's turn
   //function should be called at the end of each turn
   //each turn ends when dice is rolled and player position is updated
@@ -70,7 +72,6 @@ function updateTurn(){
 //This func is called in rollDice func
 //after diceval has been generated
 function playerPosition(){
-  setTimeout(function(){
     if (playerTurn === player1) {
       //retreive index value and add
       player1Current = player1Current + diceval
@@ -94,9 +95,6 @@ function playerPosition(){
      //Warp is working!
     Warp(player1Current);
     Warp(player2Current);
-  }, 600);
-  player1 =player1icon;
-  player2 =player2icon;
 }; /*------------------func is Working!!----------------------*/
 
 
@@ -114,12 +112,12 @@ function rollDice(){
     //the number generated should be turned into a value variable diceval.
     diceval = randomDiceVal();
     //the player's var should be changed according to the value rolled
-    playerPosition();
-    changeDiceFace();
     setTimeout(function () {
+    playerPosition();
+    }, 700);
+    changeDiceFace();
     //update turn for next player at the end of
       updateTurn();
-    }, 1000);
     draw();
     console.log('dice was rolled to value ' + diceval);
   });
@@ -162,13 +160,15 @@ function draw(){
     //when new player's turn
     $bottomDisplay.text("Roll the Dice!");
     //When player turn changes change turn display
-    if (playerTurn=== player1icon) {
+    setTimeout(function () {
+    if (playerTurn=== player1) {
       $turnDisplay.text(  "Player 1's turn!");
-    }else if (playerTurn=== player2icon) {
+    }else if (playerTurn=== player2) {
     $turnDisplay.text("Player 2's turn!");
     }else{
       $turnDisplay.text("Player 1's turn!");
     }
+    }, 500);
     // The dice background img should change to equal number generated
     changeDiceFace();
   };
@@ -218,18 +218,18 @@ function winCheck(){
   }
 };/*--------func is working-----------*/
 function renderjsBoard(){
-  player1 = "<img class='icon' src='assets/p1.png' />";
-  player2 = "<img class='icon' src='assets/p2.png' />";
+  player1icon = "<img class='icon' src='assets/p1.png' />";
+  player2icon = "<img class='icon' src='assets/p2.png' />";
   //this loop should stop when cells no longer available
   //instead it is breaking"canot set texcontent of undefined"
   for(i = 0; i < cells.length; i++){
       if (player1Current === player2Current) {
-      cells[player1Current].innerHTML = player1 + player2;
+      cells[player1Current].innerHTML = player1icon + player2icon;
     }else if (player1Current > 28 || player2Current > 28) {
       draw();
     }else{
-      cells[player1Current].innerHTML = player1
-      cells[player2Current].innerHTML = player2
+      cells[player1Current].innerHTML = player1icon
+      cells[player2Current].innerHTML = player2icon
     }
   }
 };//-----------------func is working---------
