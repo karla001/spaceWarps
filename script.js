@@ -11,6 +11,8 @@ var cells = $('.cell');//originally is renderjsboard func
 
 var player1 = 1;
 var player2 = 2;
+var player1icon="<img class='icon' src='assets/p1.png' />";
+var player2icon="<img class='icon' src='assets/p2.png' />";
 
 // Models
 var resetVal = true; //this has to be true for topDisplay to be set
@@ -93,6 +95,8 @@ function playerPosition(){
     Warp(player1Current);
     Warp(player2Current);
   }, 600);
+  player1 =player1icon;
+  player2 =player2icon;
 }; /*------------------func is Working!!----------------------*/
 
 
@@ -138,7 +142,11 @@ function startGame(){
 function draw(){
   if(win===true){
     //turnDisplay text will say  the winner
-    $turnDisplay.text( playerTurn + " is the winner!");
+    if(playerTurn===player1icon){
+      $turnDisplay.text( "Player 1 is the winner!");
+    }else if(playerTurn===player2icon){
+    $turnDisplay.text( "Player 2 is the winner!");
+    }
     //bottomDisplay will return to "Start the game!"
     $bottomDisplay.text("Winner!");
   }else if (resetVal === true){
@@ -154,7 +162,13 @@ function draw(){
     //when new player's turn
     $bottomDisplay.text("Roll the Dice!");
     //When player turn changes change turn display
-    $turnDisplay.text( playerTurn + "'s turn!");
+    if (playerTurn=== player1icon) {
+      $turnDisplay.text(  "Player 1's turn!");
+    }else if (playerTurn=== player2icon) {
+    $turnDisplay.text("Player 2's turn!");
+    }else{
+      $turnDisplay.text("Player 1's turn!");
+    }
     // The dice background img should change to equal number generated
     changeDiceFace();
   };
@@ -204,16 +218,18 @@ function winCheck(){
   }
 };/*--------func is working-----------*/
 function renderjsBoard(){
+  player1 = "<img class='icon' src='assets/p1.png' />";
+  player2 = "<img class='icon' src='assets/p2.png' />";
   //this loop should stop when cells no longer available
   //instead it is breaking"canot set texcontent of undefined"
   for(i = 0; i < cells.length; i++){
       if (player1Current === player2Current) {
-      cells[player1Current].textContent = player1 + player2;
+      cells[player1Current].innerHTML = player1 + player2;
     }else if (player1Current > 28 || player2Current > 28) {
       draw();
     }else{
-      cells[player1Current].textContent = player1
-      cells[player2Current].textContent = player2
+      cells[player1Current].innerHTML = player1
+      cells[player2Current].innerHTML = player2
     }
   }
 };//-----------------func is working---------
@@ -247,7 +263,7 @@ function Warp(current){
           moveme = 10
           alert('Warp has been activated');
           break;
-      case 15:
+      case 12:
           moveme = 18
           alert('Warp has been activated');
           break;

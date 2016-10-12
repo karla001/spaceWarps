@@ -1,6 +1,7 @@
 *{
   border: solid red 2px;
   margin: 0;
+  font-family: 'Ruslan Display', cursive;
 }
 .topContainer{
   width: 100%;
@@ -8,6 +9,13 @@
   background-color: black;
   color: white;
   text-align: center;
+}
+.turnDisplay{
+  font-family: 'Abhaya Libre', serif;
+}
+.bottomDisplay{
+  font-family: 'Abhaya Libre', serif;
+  font-size: 2em;
 }
 .board{
   width: 100%;
@@ -35,11 +43,36 @@
 .dice{
   height: 94px;
   width: 94px;
-  background-image: url(assets/d1.png);
+  background-image: url('assets/d1.png');
 }
 #finish{
-  background-color: green;
+  background-image: url('assets/planet2.jpg');
+  background-size: 160%;
 }
 #start{
-  background-color: pink;
+  background-image: url('assets/planet1.jpg');
+  background-size: 160%;
+}
+.cell{
+  background-image: url(assets/stars.gif);
+}
+.cell.warp1{
+  background-image: url('assets/warp1.jpg');
+  background-size: 120%;
+}
+.cell.warp2{
+  background-image: url('assets/warp2.jpg');
+  background-size: 120%;
+}
+.cell.p3{
+  background-image: url('assets/planet3.jpg');
+  background-size: 120%;
+}
+.cell.p4{
+  background-image: url('assets/planet4.jpg');
+  background-size: 150%;
+}
+.icon{
+  height: 50%;
+  width: 50%;
 }
