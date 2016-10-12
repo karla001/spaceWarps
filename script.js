@@ -1,3 +1,10 @@
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+//     var audio = $("assets/soundtrack.mp3")
+//     audio[0].play();
+// });
+
+
 // Elements
 var $start   = $('.start');
 var $reset = $('.reset');
