@@ -115,6 +115,7 @@ function playerPosition(){
     }
     // clearCells-func is being called properly
     clearCells()
+
     renderjsBoard();//originally first thing in draw!!
      //Warp is working!
     Warp(player1Current);
@@ -135,12 +136,11 @@ function rollDice(){
     //random # from 1-4 is Generated
     //the number generated should be turned into a value variable diceval.
     diceval = randomDiceVal();
-    setTimeout(function () {
-    playerPosition();
-    }, 700);
-    changeDiceFace();
-    //update turn for next player at the end of
     updateTurn();
+    changeDiceFace();
+    playerPosition();
+
+    //update turn for next player at the end of
     draw();
     console.log('dice was rolled to value ' + diceval);
   });
