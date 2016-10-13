@@ -8,11 +8,13 @@ function sound(){
       $audio.attr('muted',true)
       $audio[0].muted = true;
       $mutebutton.text('Unmute');
+      // $mutebutton.css('font-size', '.5em');
       console.log('Muted');
     }else if($audio[0].muted === true){
       $audio.removeAttr('muted')
       $audio[0].muted = false;
       $mutebutton.text('Mute');
+      // $mutebutton.css('font-size', '.5em');
       console.log('Unmuted');
     }
   });
