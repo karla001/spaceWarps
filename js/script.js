@@ -69,8 +69,6 @@ function initializeModels () {
 //this func is called when the dice is rolled
 //and player position is updated/ turn is complete
 function updateTurn(){
-  player1=1;
-  player2=2;
   //This func should update the current player's turn
   //function should be called at the end of each turn
   //each turn ends when dice is rolled and player position is updated
@@ -84,7 +82,7 @@ function updateTurn(){
     }else if (playerTurn === player1) {
       playerTurn = player2
     }
-   else{
+    else{
     playerTurn = player1
     }
     //when player turn changes call draw to render changes
@@ -167,9 +165,9 @@ function draw(){
   if(win===true){
     //turnDisplay text will say  the winner
     if(playerTurn === player1){
-      $turnDisplay.text( "Player 1 is the winner!");
+      $turnDisplay.text( "Player 2 is the winner!");
     }else if(playerTurn === player2){
-    $turnDisplay.text( "Player 2 is the winner!");
+    $turnDisplay.text( "Player 1 is the winner!");
     }
     $bottomDisplay.text("Winner!");
   }else if (resetVal === true){
