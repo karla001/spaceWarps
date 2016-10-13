@@ -8,7 +8,7 @@ Space Warps is a modern take on chutes and ladders. It uses the same concepts fo
 
 _*For a further description of the game's rules check out the [Instructions](https://github.com/karla001/spaceWarps/blob/master/Instructions.md) page *_
 
-_*For a further description of the game's storyline [Instructions](https://github.com/karla001/spaceWarps/blob/master/storyline.md) page *_
+_*For a further description of the game's storyline [Storyline](https://github.com/karla001/spaceWarps/blob/master/storyline.md) page *_
 
 **Technologies used in this game:**
 
