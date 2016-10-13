@@ -24,4 +24,3 @@ _*HAVE FUN!*_
 
 **Player 2:**
 ![player2 icon](https://i.imgsafe.org/e9cbc5d580.png "player 2")
-![player2 icon](https://i.imgsafe.org/e9cbd96c84.png "player 2")
