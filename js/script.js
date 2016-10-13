@@ -167,9 +167,9 @@ function draw(){
   if(win===true){
     //turnDisplay text will say  the winner
     if(playerTurn === player1){
-      $turnDisplay.text( "Player 2 is the winner!");
+      $turnDisplay.text( "Player 1 is the winner!");
     }else if(playerTurn === player2){
-    $turnDisplay.text( "Player 1 is the winner!");
+    $turnDisplay.text( "Player 2 is the winner!");
     }
     $bottomDisplay.text("Winner!");
   }else if (resetVal === true){
