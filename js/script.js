@@ -135,13 +135,12 @@ function rollDice(){
     //random # from 1-4 is Generated
     //the number generated should be turned into a value variable diceval.
     diceval = randomDiceVal();
-    //the player's var should be changed according to the value rolled
     setTimeout(function () {
     playerPosition();
     }, 700);
     changeDiceFace();
     //update turn for next player at the end of
-      updateTurn();
+    updateTurn();
     draw();
     console.log('dice was rolled to value ' + diceval);
   });
@@ -172,7 +171,6 @@ function draw(){
     }else if(playerTurn===player2icon){
     $turnDisplay.text( "Player 2 is the winner!");
     }
-    //bottomDisplay will return to "Start the game!"
     $bottomDisplay.text("Winner!");
   }else if (resetVal === true){
     //When reset
@@ -180,6 +178,7 @@ function draw(){
     $turnDisplay.text("An adventure through space!");
     //bottomDisplay will return to "Start the game!"
     $bottomDisplay.text("Start the game!");
+    $bottomDisplay.text("");
     //put player in starting position
     initializeModels();
   }else{
@@ -229,8 +228,10 @@ function resetGame(){
     resetVal = true;
     win = false;
     playerTurn = player1
-    player1Current =0
-    player2Current =0
+    player1Current = 0
+    player2Current = 0
+    player1icon;
+    player2icon;
     clearCells();
     startGame();
     draw();
@@ -243,7 +244,7 @@ function winCheck(){
   if (player1Current > 28 || player2Current > 28){
     win = true;
     draw();
-    sweetAlert({title: "You've saved humanity!",text: " Welcome to planet Senka!"});
+    swal({title: "You've saved humanity!",text: " Welcome to planet Senka!"});
     $dice.off('click');
   }
 };/*--------func is working-----------*/
@@ -265,41 +266,42 @@ function renderjsBoard(){
 };//-----------------func is working---------
 //--------------------------add the Warps!!!----------------------
 function Warp(current){
+  var message = {title: 'Turbulence',text: 'Space warp has been activated'};
   setTimeout(function () {
     switch(current) {
       //Warps-sending players backwards
       case 6:
           moveme = 1
-          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 11:
           moveme = 4
-          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 16:
           moveme = 7
-          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 21:
           moveme = 13
-          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 27:
           moveme = 20
-        sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
-        break;
+          swal(message);
+          break;
       //warps-sending players forward
       case 5:
           moveme = 10
-          sweetAlert({title: 'Turbulence!',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 12:
           moveme = 18
-          sweetAlert({title: 'Turbulence',text: 'Space warp has been activated'});
+          swal(message);
           break;
       case 19:
           moveme = 22
-          sweetAlert({title: 'Turbulence',text: 'Space warp has been activated'});
+          swal(message);
           break;
       default:
           moveme = current
