@@ -1,10 +1,23 @@
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-//     var audio = $("assets/soundtrack.mp3")
-//     audio[0].play();
-// });
+//mute
+var $mutebutton = $('.mute');
+var $audio = $('audio');
 
-
+function sound(){
+  $mutebutton.on('click',function(event) {
+    if($audio[0].muted === false){
+      $audio.attr('muted',true)
+      $audio[0].muted = true;
+      $mutebutton.text('Unmute');
+      console.log('Muted');
+    }else if($audio[0].muted === true){
+      $audio.removeAttr('muted')
+      $audio[0].muted = false;
+      $mutebutton.text('Mute');
+      console.log('Unmuted');
+    }
+  });
+};
+sound();
 // Elements
 var $start   = $('.start');
 var $reset = $('.reset');
