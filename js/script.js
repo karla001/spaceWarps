@@ -96,6 +96,7 @@ function updateTurn(){
 function playerPosition(){
     if (playerTurn === player1) {
       //retreive index value and add
+
       player1Current = player1Current + diceval
       // player1Current.text(player1)
       //new diceval to index # creating a new
@@ -103,6 +104,7 @@ function playerPosition(){
     }else if (playerTurn === player2) {
       //retreive index value and ad
       player2Current = player2Current + diceval
+
       // player2Current.text(player2)
       //new diceval to index # creating a new
       //board[i] position
@@ -158,6 +160,7 @@ function startGame(){
     rollDice();
     //display starting text and player position
     draw();
+    $start.off('click');
   });
 }; /*------------------func is working----------------------*/
 
@@ -225,9 +228,11 @@ function resetGame(){
     $dice.off('click'); //testing
     resetVal = true;
     win = false;
+    playerTurn = player1
     player1Current =0
     player2Current =0
     clearCells();
+    startGame();
     draw();
     console.log('Game has been reset');
   });
