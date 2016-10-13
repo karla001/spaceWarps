@@ -167,9 +167,9 @@ function draw(){
   if(win===true){
     //turnDisplay text will say  the winner
     if(playerTurn===player1){
-      $turnDisplay.text( "Player 1 is the winner!");
+      $turnDisplay.text( "Player 2 is the winner!");
     }else if(playerTurn===player2){
-    $turnDisplay.text( "Player 2 is the winner!");
+    $turnDisplay.text( "Player 1 is the winner!");
     }
     $bottomDisplay.text("Winner!");
   }else if (resetVal === true){
@@ -242,9 +242,9 @@ function resetGame(){
 //check for win
 function winCheck(){
   if (player1Current > 28 || player2Current > 28){
+    swal({title: "You've saved humanity!",text: " Welcome to planet Senka!"});
     win = true;
     draw();
-    swal({title: "You've saved humanity!",text: " Welcome to planet Senka!"});
     $dice.off('click');
   }
 };/*--------func is working-----------*/
