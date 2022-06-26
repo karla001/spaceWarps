@@ -8,13 +8,11 @@ function sound(){
       $audio.attr('muted',true)
       $audio[0].muted = true;
       $mutebutton.text('Unmute');
-      // $mutebutton.css('font-size', '.5em');
       console.log('Muted');
     }else if($audio[0].muted === true){
       $audio.removeAttr('muted')
       $audio[0].muted = false;
       $mutebutton.text('Mute');
-      // $mutebutton.css('font-size', '.5em');
       console.log('Unmuted');
     }
   });
@@ -27,7 +25,7 @@ var $dice    = $('.dice');
 var $turnDisplay = $('.turnDisplay');
 var $bottomDisplay = $('.bottomDisplay');
 var $board = $('.board');
-var cells = $('.cell');//originally is renderjsboard func
+var cells = $('.cell');
 
 // Constants
 
@@ -37,7 +35,7 @@ var player1icon;
 var player2icon;
 
 // Models
-var resetVal = true; //this has to be true for topDisplay to be set
+var resetVal = true; 
 var diceval = null;
 
 var  win= undefined;
@@ -48,7 +46,7 @@ var player2Current = 0;
 var  playerTurn= player1;
 var moveme;
 
-//calling the draw function o set up my game
+//calling the draw function to set up my game
 draw();
 //call initialize
 initializeModels();
@@ -64,7 +62,7 @@ function initializeModels () {
   //return to starting Game model
   diceval = null;
   win = false;
-};//---------func is working----------
+};
 
 //this func is called when the dice is rolled
 //and player position is updated/ turn is complete
@@ -89,25 +87,18 @@ function updateTurn(){
     }
     //when player turn changes call draw to render changes
     draw();
-};   /*------------------Func is Working!!----------------------*/
+};   
 
 //This func is called in rollDice func
 //after diceval has been generated
 function playerPosition(){
     if (playerTurn === player1) {
       //retreive index value and add
-
       player1Current = player1Current + diceval
-      // player1Current.text(player1)
-      //new diceval to index # creating a new
-      //board[i] position
+      
     }else if (playerTurn === player2) {
       //retreive index value and ad
       player2Current = player2Current + diceval
-
-      // player2Current.text(player2)
-      //new diceval to index # creating a new
-      //board[i] position
     }
     //for statement did not work here!
     if(player2Current>28 || player1Current>28) {
@@ -120,21 +111,17 @@ function playerPosition(){
      //Warp is working!
     Warp(player1Current);
     Warp(player2Current);
-}; /*------------------func is Working!!----------------------*/
-
+}; 
 
 //to generate diceval value
 function randomDiceVal(){
-  /* create a random # from 1-4 */
-  return Math.floor((Math.random() * 4) + 1);
-};/*------------------func is working!!----------------------*/
+  return Math.floor((Math.random() * 5));
+};
 
 function rollDice(){
   console.log('rollDice has been called');
   //attach a click handler to dice
   $dice.click(function(event) {
-    //random # from 1-4 is Generated
-    //the number generated should be turned into a value variable diceval.
     diceval = randomDiceVal();
     updateTurn();
     changeDiceFace();
@@ -144,13 +131,11 @@ function rollDice(){
     draw();
     console.log('dice was rolled to value ' + diceval);
   });
-}; /*------------------func is Working!!----------------------*/
+}; 
 
 function startGame(){
   console.log('Ready to start game');
   $start.click(function(event) {
-    console.log('game started');
-    //testing
     sweetAlert("Save humanity", "Get to planet Senka!");
     //reset is set to false
     resetVal = false;
@@ -161,7 +146,7 @@ function startGame(){
     draw();
     $start.off('click');
   });
-}; /*------------------func is working----------------------*/
+}; 
 
 function draw(){
   if(win===true){
@@ -198,7 +183,7 @@ function draw(){
     // The dice background img should change to equal number generated
     changeDiceFace();
   };
-}; /*------------------ready for testing----------------------*/
+}; 
 
 function changeDiceFace(){
   if (diceval === 1) {
@@ -218,13 +203,13 @@ function changeDiceFace(){
       "background-image": 'url(assets/images/d4.png)'
     });
   }
-};//---------------func is working-----------
+};
 
 function resetGame(){
   //reset all values to starting values
   $reset.click(function(event) {
     //set reset to true
-    $dice.off('click'); //testing
+    $dice.off('click'); 
     resetVal = true;
     win = false;
     playerTurn = player1
@@ -235,9 +220,8 @@ function resetGame(){
     clearCells();
     startGame();
     draw();
-    console.log('Game has been reset');
   });
-}; /*------------------func is working----------------------*/
+}; 
 
 //check for win
 function winCheck(){
@@ -247,7 +231,8 @@ function winCheck(){
     draw();
     $dice.off('click');
   }
-};/*--------func is working-----------*/
+};
+
 function renderjsBoard(){
   player1icon = "<img class='icon' src='assets/images/p1.png' />";
   player2icon = "<img class='icon' src='assets/images/p2.png' />";
@@ -263,8 +248,8 @@ function renderjsBoard(){
       cells[player2Current].innerHTML = player2icon
     }
   }
-};//-----------------func is working---------
-//--------------------------add the Warps!!!----------------------
+};
+
 function Warp(current){
   var message = {title: 'Turbulence',text: 'Space warp has been activated'};
   setTimeout(function () {
@@ -312,10 +297,10 @@ function Warp(current){
       player2Current = moveme
     }
     clearCells()
-    renderjsBoard();//originally first thing in draw!!
+    renderjsBoard();
   }, 500);
 };
-//------------------Clearing cells-Func is working-----------------
+
 function clearCells(){
   console.log('clearing cells');
   for (var i = 0; i < cells.length; i++) {
